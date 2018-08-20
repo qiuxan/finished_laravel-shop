@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Exceptions\InvalidRequestException;
+
 use Exception;
 use App\Models\User;
 use Cache;
@@ -13,6 +16,18 @@ class EmailVerificationController extends Controller
 {
     public function verify(Request $request)
     {
+        $email = $request->input('email');
+        $token = $request->input('token');
+        if (!$email || !$token) {
+            throw new InvalidRequestException('Verified link is not correct');
+        }
+        if ($token != Cache::get('email_verification_'.$email)) {
+            throw new InvalidRequestException('Verified link is not correct or it is expired');
+        }
+        if (!$user = User::where('email', $email)->first()) {
+            throw new InvalidRequestException('User not exists');
+        }
+
         // get email and token from url
         $email = $request->input('email');
         $token = $request->input('token');
@@ -47,11 +62,16 @@ class EmailVerificationController extends Controller
     public function send(Request $request)
     {
         $user = $request->user();
+        if ($user->email_verified) {
+            throw new InvalidRequestException('You have already verified your email');
+        }
+
+        $user = $request->user();
         // check the verified status of the user
         if ($user->email_verified) {
             throw new Exception('You already verified your email');
         }
-        // 调用 notify() 方法用来发送我们定义好的通知类
+        // call notify() to send the notification class we have defined
         $user->notify(new EmailVerificationNotification());
 
         return view('pages.success', ['msg' => 'Verified email sent']);
