@@ -6,7 +6,7 @@
         <div class="panel-heading">Notice</div>
         <div class="panel-body text-center">
             <h1>Please Verify Your Email</h1>
-            <a class="btn btn-primary" href="{{ route('root') }}">Back to Homepage</a>
+            <a class="btn btn-primary" href="{{ route('email_verification.send') }}">Send Verify Email Again</a>
         </div>
     </div>
 @endsection
