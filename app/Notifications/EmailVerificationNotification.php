@@ -32,7 +32,7 @@ class EmailVerificationNotification extends Notification implements ShouldQueue
         $url = route('email_verification.verify', ['email' => $notifiable->email, 'token' => $token]);
 
         return (new MailMessage)
-            ->greeting($notifiable->name.'Hello: ')
+            ->greeting($notifiable->name.' Hello: ')
             ->subject('Register successfully, please verify your email')
             ->line('Please click the following link to verify')
             ->action('Verify',  $url);
