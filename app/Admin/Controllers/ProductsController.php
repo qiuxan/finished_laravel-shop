@@ -37,10 +37,7 @@ class ProductsController extends Controller
     public function edit($id)
     {
         return Admin::content(function (Content $content) use ($id) {
-
-            $content->header('header');
-            $content->description('description');
-
+            $content->header('Edit Product');
             $content->body($this->form()->edit($id));
         });
     }
