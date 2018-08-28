@@ -23,6 +23,8 @@
       </div>
       @endforeach
     </div>
+    <div class="pull-right">{{ $products->render() }}</div>  <!-- Paginate  -->
+
   </div>
 </div>
 </div>
