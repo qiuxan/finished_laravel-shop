@@ -106,7 +106,7 @@
                               location.reload();
                           });
                   });
-          }); 
+          });
       });
   </script>
 @endsection

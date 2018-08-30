@@ -41,6 +41,10 @@
                                 <a href="{{ route('user_addresses.index') }}">Address</a>
                             </li>
                             <li>
+                                <a href="{{ route('products.favorites') }}">My Favorites</a>
+                            </li>
+
+                            <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
