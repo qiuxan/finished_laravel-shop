@@ -44,6 +44,11 @@
                             <li>
                                 <a href="{{ route('user_addresses.index') }}">Address</a>
                             </li>
+
+                            <li>
+                                <a href="{{ route('orders.index') }}">My Oders</a>
+                            </li>
+
                             <li>
                                 <a href="{{ route('products.favorites') }}">My Favorites</a>
                             </li>
