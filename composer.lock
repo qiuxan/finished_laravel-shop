@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3eafbbec5fafaa95c039423d94c872fb",
+    "content-hash": "975e0410fc4b3d1301a6930e2c59e1d2",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -219,16 +219,16 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.5.15",
+            "version": "v1.5.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "c896bf22db2038379f0cc6b8625834aa4ed2ec55"
+                "reference": "49553f7f4cd2ef14583c65427b9deb663e2e5c9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/c896bf22db2038379f0cc6b8625834aa4ed2ec55",
-                "reference": "c896bf22db2038379f0cc6b8625834aa4ed2ec55",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/49553f7f4cd2ef14583c65427b9deb663e2e5c9c",
+                "reference": "49553f7f4cd2ef14583c65427b9deb663e2e5c9c",
                 "shasum": ""
             },
             "require": {
